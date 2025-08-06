@@ -19,17 +19,30 @@
       <a href="unstiched.html">Unstitched</a>
       <a href="ready-to-wear.html">Ready to Wear</a>
       <a href="offers.html">Offers</a>
-      <a href="contact.html" class="active">Contact</a> <!-- active -->
+      <a href="contact.html" class="active">Contact</a>
     </nav>
 
-    <div class="nav-tools">
+    <div class="nav-tools" aria-hidden="false">
       <div class="search" role="search"><input placeholder="Search"><i class="fa fa-search" style="color:#999"></i></div>
       <div style="display:flex;gap:10px;align-items:center">
         <a href="#" title="WhatsApp"><i class="fab fa-whatsapp" style="color:#3bba43"></i></a>
         <a href="#" title="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
       </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><i class="fa fa-bars"></i></button>
     </div>
   </header>
+
+  <!-- mobile overlay + panel (for small screens) -->
+  <div id="menuOverlay" class="menu-overlay" aria-hidden="true"></div>
+  <aside id="mobilePanel" class="mobile-panel" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="unstiched.html">Unstitched</a>
+      <a href="ready-to-wear.html">Ready to Wear</a>
+      <a href="offers.html">Offers</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </aside>
 
   <!-- MAIN -->
   <main class="site" role="main">
@@ -51,7 +64,7 @@
           </div>
         </div>
 
-        <!-- Contact form (non-functional: replace action with your backend or Netlify/Formspree endpoint) -->
+        <!-- Contact form -->
         <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
           <div class="field">
             <label for="name">Full name</label>
@@ -74,15 +87,14 @@
             <textarea id="message" name="message" required placeholder="How can we help?"></textarea>
           </div>
 
-          <div style="display:flex;gap:10px;align-items:center">
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
             <button type="submit" class="btn">Send message</button>
             <button type="button" class="btn-ghost" onclick="resetForm()">Reset</button>
             <div id="formStatus" style="color:#4a4a4a;font-size:14px"></div>
           </div>
         </form>
 
-        <!-- small accessibility note -->
-        <p style="margin-top:14px;color:#666;font-size:13px">Prefer chat? Use WhatsApp (scan QR or click the button on the right).</p>
+        <p style="margin-top:14px;color:#666;font-size:13px">Prefer chat? Use WhatsApp (scan QR or tap the chat button).</p>
       </section>
 
       <!-- right column: WhatsApp QR + details + map -->
@@ -90,26 +102,24 @@
         <!-- WhatsApp QR card -->
         <div class="qr-wrap" role="region" aria-label="WhatsApp contact">
           <div style="display:flex;justify-content:center">
-            <!-- Replace YOUR_PHONE_NUMBER below with E.164 number without "+" or spaces (example: 923001234567) -->
             <img alt="WhatsApp QR" src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=https://wa.me/YOUR_PHONE_NUMBER" width="220" height="220" style="border-radius:8px">
           </div>
 
           <p style="margin-top:10px">Scan to open chat on WhatsApp</p>
 
-          <!-- Click to chat button using wa.me link (replace YOUR_PHONE_NUMBER) -->
           <div style="display:flex;gap:8px;justify-content:center;margin-top:8px">
             <a class="btn" href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
               <i class="fa fa-whatsapp" style="margin-right:8px"></i> Chat on WhatsApp
             </a>
           </div>
 
-          <small style="display:block;margin-top:8px;color:#777">Tip: If you want a custom message sent automatically, add `?text=YOUR%20MESSAGE` to the wa.me URL.</small>
+          <small style="display:block;margin-top:8px;color:#777">Tip: Add ?text=YOUR%20MESSAGE to wa.me for a prefilled message.</small>
         </div>
 
-        <!-- Office hours & quick contact small cards -->
+        <!-- Office hours -->
         <div class="card" style="padding:12px">
           <div style="display:flex;gap:10px;align-items:center">
-            <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-clock"></i></div>
             <div>
               <div style="font-weight:700;color:#444">Opening hours</div>
               <div style="color:#666">Mon — Sat: 10:00 — 20:00<br>Sun: Closed</div>
@@ -117,9 +127,10 @@
           </div>
         </div>
 
+        <!-- Visit us -->
         <div class="card" style="padding:12px">
           <div style="display:flex;gap:10px;align-items:center">
-            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
             <div>
               <div style="font-weight:700;color:#444">Visit us</div>
               <div style="color:#666">Your Street Name, City, Country</div>
@@ -127,14 +138,13 @@
           </div>
         </div>
 
-  
+        <!-- Map -->
         <div class="card">
           <h3 style="margin:0 0 8px;color:var(--accent)">Our location</h3>
-          <!-- Example: Google Maps embed. Replace the src with your Google Maps embed link. -->
           <div class="map" aria-hidden="false">
             <iframe
               src="https://www.google.com/maps?q=lahore+pakistan&output=embed"
-              width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              width="100%" height="100%" style="border:0;min-height:220px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
 
@@ -154,14 +164,16 @@
         <div>
           <strong style="color:var(--accent)">Shop</strong>
           <ul style="list-style:none;padding:8px 0 0;margin:0;color:#666">
-            <li><a href="#">Products</a></li><li><a href="#">Collections</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Collections</a></li>
           </ul>
         </div>
 
         <div>
           <strong style="color:var(--accent)">Company</strong>
           <ul style="list-style:none;padding:8px 0 0;margin:0;color:#666">
-            <li><a href="about.html">About</a></li><li><a href="#">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -179,16 +191,15 @@
   </footer>
 
 <script>
- 
+  // year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-
+  // form (demo)
   function handleSubmit(e){
     e.preventDefault();
     const form = e.target;
     const status = document.getElementById('formStatus');
     status.textContent = 'Sending...';
-
     const name = form.name.value.trim();
     const email = form.email.value.trim();
     const message = form.message.value.trim();
@@ -196,24 +207,65 @@
       status.textContent = 'Please fill required fields.';
       return;
     }
-
-
     setTimeout(()=> {
       status.textContent = 'Message sent — we will reply shortly.';
       form.reset();
     }, 900);
   }
-
   function resetForm(){ document.getElementById('contactForm').reset(); document.getElementById('formStatus').textContent=''; }
 
-
+  // QR click
   (function attachQRLink(){
     const qr = document.querySelector('.qr-wrap img');
     if(!qr) return;
-    const phone = '+923365990808'; 
+    const phone = '923365990808'; // replace without "+"
     const wa = `https://wa.me/${phone}`;
     qr.style.cursor = 'pointer';
     qr.addEventListener('click', ()=> window.open(wa,'_blank'));
+  })();
+
+  // MOBILE NAV: overlay + panel
+  (function(){
+    const hamburger = document.getElementById('hamburger');
+    const overlay = document.getElementById('menuOverlay');
+    const panel = document.getElementById('mobilePanel');
+
+    function openPanel(){
+      panel.classList.add('open');
+      overlay.classList.add('show');
+      panel.setAttribute('aria-hidden','false');
+      overlay.setAttribute('aria-hidden','false');
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+    }
+    function closePanel(){
+      panel.classList.remove('open');
+      overlay.classList.remove('show');
+      panel.setAttribute('aria-hidden','true');
+      overlay.setAttribute('aria-hidden','true');
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    }
+
+    hamburger && hamburger.addEventListener('click', ()=> {
+      if(panel.classList.contains('open')) closePanel(); else openPanel();
+    });
+    overlay && overlay.addEventListener('click', closePanel);
+
+    // close if clicking a link inside panel
+    panel && panel.addEventListener('click', (e) => {
+      if(e.target.tagName.toLowerCase() === 'a') closePanel();
+    });
+
+    document.addEventListener('keydown', (e)=> {
+      if(e.key === 'Escape') closePanel();
+    });
+
+    window.addEventListener('resize', ()=> {
+      if(window.innerWidth > 720) {
+        closePanel();
+      }
+    });
   })();
 </script>
 </body>
