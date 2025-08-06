@@ -5,127 +5,217 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us - لبادة by Nisa</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-<!-- <link rel="stylesheet" href="styleSheet/about.css">
-  -->
-<style>
- /* ---------- Responsive About Page (paste over old styles) ---------- */
-:root{
-  --bg: #f9f9f9;
-  --card: #fff;
-  --muted: #333;
-  --accent: #b79a56;
-  --radius: 10px;
-  --max-width: 1100px;
-  --nav-height: 64px;
-  --gap: 18px;
-}
 
-/* Base */
-*,:before,:after{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;background:var(--bg);-webkit-font-smoothing:antialiased}
-a{color:inherit}
-img{max-width:100%;height:auto;display:block}
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
-/* NAVBAR */
-.navbar{
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:10px 18px;background:var(--card);border-bottom:1px solid #eee;
-  position:sticky;top:0;z-index:1200;height:var(--nav-height);
-  box-shadow:0 6px 20px rgba(0,0,0,0.03);
-}
-.logo h1{font-family:Georgia, serif;font-size:20px;color:var(--accent);margin:0}
-.nav-links ul{list-style:none;display:flex;gap:14px;margin:0;padding:0;align-items:center}
-.nav-links a{display:inline-block;text-decoration:none;color:var(--muted);font-size:13px;text-transform:uppercase;font-weight:700;padding:6px 8px;border-radius:8px}
-.nav-links a:hover{color:var(--accent)}
-.nav-icons{display:flex;align-items:center;gap:12px}
-.search-container{display:flex;align-items:center;border:1px solid #ddd;border-radius:6px;padding:6px 8px;background:#fafafa}
-.search-container input{border:0;outline:none;padding:6px;background:none;min-width:90px}
-.menu-toggle{display:none;font-size:22px;background:none;border:0;cursor:pointer;color:var(--muted)}
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      background-color: #fff;
+      border-bottom: 2px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo h1 {
+      font-family: "Georgia", serif;
+      font-size: 22px;
+      color: #b79a56;
+      margin: 0;
+    }
+    .nav-links ul {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-size: 13px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .nav-links a:hover {
+      color: #b79a56;
+    }
+    .nav-icons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .search-container {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 6px 8px;
+      background-color: #fafafa;
+    }
+    .search-container input {
+      border: none;
+      outline: none;
+      padding: 6px;
+      background: none;
+      min-width: 90px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 22px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
 
-/* Mobile: slide-in menu (re-uses #navLinks element) */
-#navLinks { transition: none; } /* default desktop behavior */
-#navLinks.active {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 86vw;
-  max-width: 360px;
-  height: 100vh;
-  background: linear-gradient(180deg,var(--card),#fbfbfb);
-  box-shadow: -18px 0 40px rgba(0,0,0,0.14);
-  padding: 92px 18px 18px;
-  z-index: 1300;
-  display: block;
-  overflow-y: auto;
-  transform: translateX(0);
-  transition: right .28s cubic-bezier(.2,.9,.2,1);
-}
-#navLinks.active ul{flex-direction:column;gap:12px}
-#navLinks.active a{padding:12px;border-radius:8px;font-weight:800}
-.menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);backdrop-filter:blur(3px);opacity:0;visibility:hidden;z-index:1290;transition:opacity .22s ease}
-.menu-overlay.show{opacity:1;visibility:visible}
+    /* About Us Section */
+    .about-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+    }
+    .about-title {
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      color: #b79a56;
+      margin-bottom: 20px;
+    }
+    .about-content {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #555;
+      text-align: center;
+    }
+    .about-image {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .about-image img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    }
+    .about-mission {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .about-mission h3 {
+      color: #b79a56;
+      margin-bottom: 10px;
+    }
 
-/* ABOUT SECTION */
-.about-section{
-  max-width:1000px;margin:40px auto;padding:22px;background:var(--card);border-radius:var(--radius);
-  box-shadow:0 6px 14px rgba(0,0,0,0.05);
-  display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:start;
-}
-.about-title{text-align:left;font-size:26px;font-weight:800;color:var(--accent);margin:0 0 8px}
-.about-content{font-size:15px;line-height:1.7;color:#555;text-align:left}
-.about-image{text-align:center;margin:18px 0}
-.about-image img{border-radius:12px;box-shadow:0 6px 14px rgba(0,0,0,0.08)}
-.about-mission{margin-top:18px;text-align:left}
-.about-mission h3{color:var(--accent);margin-bottom:8px}
+    /* Footer */
+    .footer {
+      background-color: #1c1c1c;
+      color: #fff;
+      padding: 30px 18px;
+    }
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+    .footer-brand h2 {
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .social-icons a {
+      margin-right: 10px;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+    .footer-section h3 {
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+      color: #d4af37;
+    }
+    .footer-section ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .footer-section a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .newsletter input {
+      padding: 8px;
+      border-radius: 4px;
+      margin-right: 6px;
+      border: none;
+    }
+    .newsletter button {
+      padding: 8px 10px;
+      border-radius: 4px;
+      background:#9bdfb4;
+      border:none;
+      color:#123;
+      font-weight:bold;
+      cursor:pointer;
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 22px;
+      border-top: 1px solid #d4af37;
+      padding-top: 10px;
+    }
+    .footer-bottom a {
+      color: #d4af37;
+      text-decoration: none;
+      margin: 0 8px;
+    }
 
-/* FOOTER */
-.footer{background:#111;color:#fff;padding:28px 18px;margin-top:28px}
-.footer-container{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;max-width:var(--max-width);margin:0 auto}
-.footer-brand h2{margin:0 0 6px;color:#fff}
-.social-icons a{margin-right:10px;color:#fff;font-size:1.1rem}
-.footer-section h3{color:#d4af37;margin-bottom:8px}
-.footer-section ul{list-style:none;padding:0;margin:0;color:#ddd}
-.newsletter input{padding:8px;border-radius:6px;border:none;margin-right:6px}
-.newsletter button{padding:8px 10px;border-radius:6px;background:#9bdfb4;border:none;color:#123;font-weight:700;cursor:pointer}
-.footer-bottom{text-align:center;margin-top:22px;border-top:1px solid rgba(212,175,55,0.12);padding-top:12px;color:#ddd}
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #fff;
+        width: 200px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      .nav-links ul {
+        flex-direction: column;
+        padding: 10px 0;
+      }
+      .nav-links a {
+        display: block;
+        padding: 10px 20px;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
 
-/* Utility */
-.center{text-align:center}
-.container{max-width:var(--max-width);margin:0 auto;padding:0 18px}
-
-/* ---------------- Responsive Breakpoints ---------------- */
-@media (max-width:1024px){
-  .about-section{grid-template-columns:1fr 300px}
-  .search-container input{min-width:80px}
-}
-@media (max-width:780px){
-  /* show hamburger, hide desktop links */
-  .nav-links{display:none}
-  .menu-toggle{display:inline-block}
-  /* when mobile menu opens we reuse #navLinks.active */
-  .about-section{grid-template-columns:1fr;gap:14px;padding:18px;margin:20px auto}
-  .about-title{text-align:center;font-size:22px}
-  .about-content{text-align:center;font-size:15px}
-  .about-mission{text-align:center}
-  .about-image img{max-height:320px;object-fit:cover}
-  .footer-container{flex-direction:column;align-items:center;text-align:center}
-  /* ensure navLinks (desktop node) is visible when active on mobile */
-  #navLinks.active{display:block}
-}
-@media (max-width:480px){
-  .about-section{padding:14px;margin:14px}
-  .about-title{font-size:20px}
-  .about-content{font-size:14px}
-  .about-image img{max-height:240px}
-  .menu-overlay{backdrop-filter: blur(2px)}
-  #navLinks.active{width:92vw;max-width:340px;padding-top:88px}
-}
-
-/* focus states */
-a:focus,button:focus,input:focus{outline:3px solid rgba(183,154,86,0.18);outline-offset:2px}
-
- 
-</style>
+    @media (max-width: 600px) {
+      .about-title {
+        font-size: 22px;
+      }
+      .about-content {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -149,8 +239,8 @@ a:focus,button:focus,input:focus{outline:3px solid rgba(183,154,86,0.18);outline
       <a href="#"><i class="fab fa-whatsapp"></i></a>
       <a href="#"><i class="fas fa-shipping-fast"></i></a>
       <a href="#"><i class="fas fa-shopping-cart"></i></a>
+      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
     </div>
-    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
   </header>
 
   <!-- About Us Section -->
@@ -222,53 +312,15 @@ a:focus,button:focus,input:focus{outline:3px solid rgba(183,154,86,0.18);outline
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
     menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+      navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
     });
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
+      if (window.innerWidth > 768) {
+        navLinks.style.display = 'flex';
+      } else {
+        navLinks.style.display = 'none';
       }
     });
-    // Responsive mobile menu (no HTML changes required)
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-
-// create overlay (only once)
-let menuOverlay = document.querySelector('.menu-overlay');
-if (!menuOverlay) {
-  menuOverlay = document.createElement('div');
-  menuOverlay.className = 'menu-overlay';
-  document.body.appendChild(menuOverlay);
-}
-
-function openMenu() {
-  navLinks.classList.add('active');
-  menuOverlay.classList.add('show');
-  document.body.style.overflow = 'hidden';
-  menuToggle.setAttribute('aria-expanded', 'true');
-}
-function closeMenu() {
-  navLinks.classList.remove('active');
-  menuOverlay.classList.remove('show');
-  document.body.style.overflow = '';
-  menuToggle.setAttribute('aria-expanded', 'false');
-}
-
-menuToggle.addEventListener('click', () => {
-  if (navLinks.classList.contains('active')) closeMenu();
-  else openMenu();
-});
-
-// close when clicking outside (overlay) or on a nav link
-menuOverlay.addEventListener('click', closeMenu);
-navLinks.addEventListener('click', (e) => {
-  if (e.target.tagName.toLowerCase() === 'a') closeMenu();
-});
-
-// close on ESC and when resizing to desktop
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMenu(); });
-
   </script>
 </body>
 </html>
