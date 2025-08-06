@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>لبادة by Nisa — Offers</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../styleSheet/offer.css">
+</head>
+<body>
+
+
+  <header class="navbar">
+    <div class="logo"><h1>لبادة by Nisa</h1></div>
+
+    <nav class="primary" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="unstiched.html">Unstitched</a>
+      <a href="ready-to-wear.html">Ready to Wear</a>
+      <a href="offers.html" class="active">Offers</a> <!-- active underline -->
+      <a href="./about.html">About</a>
+    </nav>
+
+    <div class="nav-tools">
+      <div class="search"><input type="search" placeholder="Search offers..."><i class="fa fa-search" style="color:#888"></i></div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp" style="color:#3bba43"></i></a>
+        <a href="#" title="Cart"><i class="fa-solid fa-bag-shopping" style="color:#333"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="site" role="main">
+    <!-- HERO + small summary -->
+    <section class="hero" aria-labelledby="offers-hero">
+      <div class="hero-text">
+        <h2 id="offers-hero">Limited-Time Offers</h2>
+        <p>Handpicked seasonal deals — up to 60% off on selected collections. Fast shipping, limited quantities.</p>
+
+        <div class="offers-row" aria-hidden="false">
+          <div class="offer-pill">Extra 10% with code <strong>NB10</strong></div>
+          <div class="offer-pill">Free shipping on orders $150+</div>
+          <div class="offer-pill">30-day returns</div>
+        </div>
+
+        <div style="margin-top:12px">
+          <button class="hero-cta" onclick="document.getElementById('top-offers').scrollIntoView({behavior:'smooth'})">Shop Offers</button>
+        </div>
+
+        <!-- Countdown -->
+        <div class="countdown" style="margin-top:14px">
+          <div style="color:#666">Offer ends in</div>
+          <div class="time-box"><div class="time-num" id="days">00</div><div class="time-label">Days</div></div>
+          <div class="time-box"><div class="time-num" id="hours">00</div><div class="time-label">Hours</div></div>
+          <div class="time-box"><div class="time-num" id="minutes">00</div><div class="time-label">Minutes</div></div>
+          <div class="time-box"><div class="time-num" id="seconds">00</div><div class="time-label">Seconds</div></div>
+        </div>
+      </div>
+
+      <!-- hero image (Unsplash) -->
+      <div class="hero-media" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=de0c9d3c9ee6c8d4a3fcae3b5bb22a94" alt="Offers hero" style="border-radius:8px; width:100%; max-width:420px; object-fit:cover; box-shadow:0 8px 30px rgba(0,0,0,0.08)">
+      </div>
+    </section>
+
+    <!-- BIG BANNER PROMO -->
+    <section class="banner" aria-label="Top banner offer">
+      <div style="flex:1">
+        <h3 style="margin:0;color:#333">Flash Sale — Eveningwear</h3>
+        <p style="margin:8px 0 0;color:#555">Elegant co-ords & evening sets at special prices. Limited stock.</p>
+        <div style="margin-top:12px">
+          <button class="banner-cta" onclick="document.getElementById('top-offers').scrollIntoView({behavior:'smooth'})">Shop Eveningwear</button>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1602810315161-3b3a1f3f8b3e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=6b6bd9f1d1a3dfc5a8d13e3c4b6efef1" alt="Eveningwear">
+    </section>
+
+    <!-- OFFERS GRID -->
+    <section id="top-offers" style="margin-top:18px;">
+      <div class="offers-grid">
+        <!-- Card 1 -->
+        <article class="offer-card" aria-labelledby="offer-1">
+          <div class="offer-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1534011546717-9b2ad7f6d1f4?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=a5a6d3f4f2b4a531c8b2a2b2c3c2d1e1" alt="Embroidered set">
+            <div class="offer-tag">-40% OFF</div>
+          </div>
+          <div class="offer-body">
+            <h3 id="offer-1" class="offer-title">Embroidered Co-ord Set</h3>
+            <p class="offer-desc">Luxury embroidery, limited pieces.</p>
+            <div class="offer-meta">
+              <div class="price-old">$220</div>
+              <div class="price-now">$132</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="offer-card">
+          <div class="offer-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1520975914229-0a4c7f7d6df3?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=8f2f2e9b8ff1c53b2a1d8e3f5fd2a1a6" alt="Casual dresses">
+            <div class="offer-tag">-25% OFF</div>
+          </div>
+          <div class="offer-body">
+            <h3 class="offer-title">Casual Dress Collection</h3>
+            <p class="offer-desc">Everyday comfort, seasonal colors.</p>
+            <div class="offer-meta">
+              <div class="price-old">$80</div>
+              <div class="price-now">$60</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="offer-card">
+          <div class="offer-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=de0c9d3c9ee6c8d4a3fcae3b5bb22a94" alt="Accessories">
+            <div class="offer-tag">BUNDLE SAVE</div>
+          </div>
+          <div class="offer-body">
+            <h3 class="offer-title">Accessories Bundle</h3>
+            <p class="offer-desc">Scarves + bag + brooch — special bundle price.</p>
+            <div class="offer-meta">
+              <div class="price-old">$120</div>
+              <div class="price-now">$79</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="offer-card">
+          <div class="offer-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1520975914229-0a4c7f7d6df3?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=8f2f2e9b8ff1c53b2a1d8e3f5fd2a1a6" alt="Outerwear">
+            <div class="offer-tag">-30% OFF</div>
+          </div>
+          <div class="offer-body">
+            <h3 class="offer-title">Outerwear Picks</h3>
+            <p class="offer-desc">Coats & jackets — keep warm in style.</p>
+            <div class="offer-meta">
+              <div class="price-old">$220</div>
+              <div class="price-now">$154</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="offer-card">
+          <div class="offer-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1475180098320-1f56c58f3ef0?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=77e6fa9f3a2f1b2c3d4e5f6a7b8c9d0e" alt="Shirts">
+            <div class="offer-tag">-15% OFF</div>
+          </div>
+          <div class="offer-body">
+            <h3 class="offer-title">Formal Shirts</h3>
+            <p class="offer-desc">Smart fabrics and crisp finishes.</p>
+            <div class="offer-meta">
+              <div class="price-old">$55</div>
+              <div class="price-now">$47</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="offer-card">
+          <div class="offer-media">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=a8c2f22b6c6fbe5e2d5a2c9f4a3b1c2d" alt="Kids collection">
+            <div class="offer-tag">KIDS SALE</div>
+          </div>
+          <div class="offer-body">
+            <h3 class="offer-title">Kids Collection</h3>
+            <p class="offer-desc">Comfortable & durable kidswear.</p>
+            <div class="offer-meta">
+              <div class="price-old">$60</div>
+              <div class="price-now">$39</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="foot-inner">
+      <div>
+        <strong style="color:var(--accent);display:block">لبادة by Nisa</strong>
+        <small style="color:#777">Follow us for new drops & exclusive codes</small>
+      </div>
+
+      <div style="display:flex;gap:28px;flex-wrap:wrap">
+        <div><strong style="color:var(--accent)">Shop</strong><ul style="list-style:none;padding:10px 0 0;margin:0;color:#666"><li>Products</li><li>Collections</li></ul></div>
+        <div><strong style="color:var(--accent)">Company</strong><ul style="list-style:none;padding:10px 0 0;margin:0;color:#666"><li>About</li><li>Contact</li></ul></div>
+      </div>
+
+      <div>
+        <small style="color:#777">Newsletter</small>
+        <div style="margin-top:8px;display:flex;gap:8px">
+          <input placeholder="Your email" style="padding:8px;border-radius:8px;border:1px solid #eee;background:#fff">
+          <button style="padding:8px 12px;border-radius:8px;background:var(--accent);border:0;color:#fff;font-weight:700">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;color:#777;margin-top:18px;border-top:1px solid #eee;padding-top:14px">© <span id="year"></span> لبادة by Nisa — All rights reserved</div>
+  </footer>
+
+<script>
+  // Countdown timer: set your target date/time (example: 30 days from now)
+  const targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + 30); // demo: 30 days from now
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const timeLeft = targetDate - now;
+
+    if (timeLeft <= 0) {
+      document.getElementById('days').textContent = '00';
+      document.getElementById('hours').textContent = '00';
+      document.getElementById('minutes').textContent = '00';
+      document.getElementById('seconds').textContent = '00';
+      return;
+    }
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000*60*60));
+    const minutes = Math.floor((timeLeft % (1000*60*60)) / (1000*60));
+    const seconds = Math.floor((timeLeft % (1000*60)) / 1000);
+
+    document.getElementById('days').textContent = String(days).padStart(2,'0');
+    document.getElementById('hours').textContent = String(hours).padStart(2,'0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2,'0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2,'0');
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

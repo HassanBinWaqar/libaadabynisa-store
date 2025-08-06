@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لبادة by Nisa</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+   <link rel="stylesheet" href="../styleSheet/index.css">
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul id="nav-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="./unstiched.html">Unstiched</a></li>
+          <li><a href="./ready.html">Ready to wear</a></li>
+          <li><a href="./offers.html">Offers</a></li>
+          <li><a href="./about.html">About us</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="logo">
+        <img
+          src="../Images/logo-removebg-preview.png"
+          alt="لبادة by Nisa Logo"
+          class="logo-image"
+        />
+      </div>
+    </header>
+
+    <section class="hero-section">
+      <div class="hero-text">
+        <h1>Discover Your Unique Style</h1>
+        <p>
+          Explore our curated collection of elegant clothing and accessories
+          designed to elevate your wardrobe.
+        </p>
+        <a href="#" class="btn">Explore Now</a>
+      </div>
+      <img
+        src="../Images/pic_head.webp"
+        alt="Fashion Model"
+        class="hero-image"
+      />
+    </section>
+
+    <section class="best-selling">
+      <h2 class="section-title">Best Selling</h2>
+      <p class="section-description">
+        Discover our most popular styles, handpicked for your wardrobe
+        essentials.
+      </p>
+      <div class="products">
+        <div class="product-card">
+          <img src="../Images/pic1.webp" alt="Classic Black Abaya" />
+          <h3 class="product-title">Classic Black Abaya</h3>
+          <p class="price">$120.00</p>
+          <p class="rating">4.8 ★</p>
+        </div>
+        <div class="product-card">
+          <img src="../Images/pic2.webp" alt="Embroidered Kaftan" />
+          <h3 class="product-title">Embroidered Kaftan</h3>
+          <p class="price">$150.00</p>
+          <p class="rating">5.0 ★</p>
+        </div>
+        <div class="product-card">
+          <img src="../Images/pic3.webp" alt="Elegant Modest Dress" />
+          <h3 class="product-title">Elegant Modest Dress</h3>
+          <p class="price">$99.00</p>
+          <p class="rating">4.7 ★</p>
+        </div>
+      </div>
+      <a href="#" class="see-all">See All Products</a>
+    </section>
+
+    <section class="product-section">
+      <h2>Our Products</h2>
+      <div class="category-menu">
+        <button class="category-btn active" data-category="all">ALL</button>
+        <button class="category-btn" data-category="hot">HOT</button>
+        <button class="category-btn" data-category="new">NEW ARRIVALS</button>
+        <button class="category-btn" data-category="accessories">
+          ACCESSORIES
+        </button>
+      </div>
+      <div class="product-grid">
+        <div class="product-card" data-category="hot">
+          <img src="../Images/pic4.webp" alt="Spread Collar Shirt" />
+          <h3>Spread Collar Shirt</h3>
+          <p class="price">$48.99</p>
+          <p class="rating">5.0 ★</p>
+        </div>
+        <div class="product-card" data-category="hot">
+          <img src="../Images/pic5.webp" alt="White Solid Formal Shirt" />
+          <h3>White Solid Formal Shirt</h3>
+          <p class="price">$39.00</p>
+          <p class="rating">4.9 ★</p>
+        </div>
+        <div class="product-card" data-category="new">
+          <img src="../Images/pic6.webp" alt="Shine On Me Blouse" />
+          <h3>Shine On Me Blouse</h3>
+          <p class="price">$42.99</p>
+          <p class="rating">4.8 ★</p>
+        </div>
+        <div class="product-card" data-category="accessories">
+          <img src="../Images/pic7.webp" alt="Gray Solid Padded Jacket" />
+          <h3>Gray Solid Padded Jacket</h3>
+          <p class="price">$32.99</p>
+          <p class="rating">4.7 ★</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="countdown-section" class="countdown-container">
+      <div class="countdown-wrapper">
+        <div class="countdown-content">
+          <h1 class="event-title">Upcoming Event</h1>
+          <p class="event-subtitle">
+            Don't miss out! The countdown to our event starts now:
+          </p>
+          <div class="countdown-timer">
+            <div class="time-box">
+              <span id="days" class="time-number">00</span>
+              <p class="time-label">Days</p>
+            </div>
+            <div class="time-box">
+              <span id="hours" class="time-number">00</span>
+              <p class="time-label">Hours</p>
+            </div>
+            <div class="time-box">
+              <span id="minutes" class="time-number">00</span>
+              <p class="time-label">Minutes</p>
+            </div>
+            <div class="time-box">
+              <span id="seconds" class="time-number">00</span>
+              <p class="time-label">Seconds</p>
+            </div>
+          </div>
+        </div>
+        <div class="countdown-image">
+          <img src="../Images/dress1.jpeg" alt="Event Promotion Image" />
+        </div>
+      </div>
+    </section>
+
+    <section class="designer-section">
+      <h2 class="section-title">Designer Clothes For You</h2>
+      <p class="section-subtitle">
+        Discover our exquisite collection of premium clothing tailored to
+        perfection!
+      </p>
+      <div class="product-categories">
+        <div class="category">
+          <img src="../Images/accessories.webp" alt="Accessories" />
+          <h3>Accessories</h3>
+          <p>
+            Complete your outfit with premium designer accessories, including
+            bags, scarves, and jewelry.
+          </p>
+        </div>
+        <div class="category">
+          <img src="../Images/outerwear.webp" alt="Dresses" />
+          <h3>Dresses</h3>
+          <p>
+            Explore our elegant collection of designer dresses, from evening
+            gowns to casual day dresses.
+          </p>
+        </div>
+        <div class="category">
+          <img src="../Images/dresses.jpeg" alt="Outerwear" />
+          <h3>Outerwear</h3>
+          <p>
+            Stay warm and stylish with our luxurious designer coats, blazers,
+            and jackets.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>لبادة by Nisa</h2>
+          <p>Social Media</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>SHOP</h3>
+          <ul>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Releases</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>COMPANY</h3>
+          <ul>
+            <li><a href="../Code/about.html">About Us</a></li>
+            <li><a href="../Code/contact.html">Contact</a></li>
+            <li><a href="../Code/news.html">News</a></li>
+            <li><a href="../Code/support.html">Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>STAY UP TO DATE</h3>
+          <div class="newsletter">
+            <input type="email" placeholder="Enter your email" />
+            <button type="submit">SUBMIT</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          <a href="#">Terms</a> | <a href="#">Privacy</a> |
+          <a href="#">Cookies</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // category filtering (kept from original)
+      const categoryButtons = document.querySelectorAll(".category-btn");
+      const productCards = document.querySelectorAll(".product-card");
+
+      categoryButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          categoryButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          const category = button.getAttribute("data-category");
+
+          productCards.forEach((card) => {
+            if (category === "all" || card.getAttribute("data-category") === category) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // mobile nav toggle
+      function toggleMenu() {
+        const navList = document.getElementById("nav-list");
+        navList.classList.toggle("active");
+      }
+
+      // close mobile menu when clicking a link (better UX)
+      document.querySelectorAll('#nav-list a').forEach(a => {
+        a.addEventListener('click', () => {
+          const navList = document.getElementById("nav-list");
+          if (navList.classList.contains('active')) navList.classList.remove('active');
+        });
+      });
+
+      // ensure mobile menu closes on window resize > mobile breakpoint
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+          const navList = document.getElementById("nav-list");
+          navList.classList.remove('active');
+        }
+      });
+
+      // countdown (kept from original)
+      const targetDate = new Date("2025-12-31T23:59:59").getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const timeLeft = targetDate - now;
+
+        if (timeLeft <= 0) {
+          document.querySelector(".countdown-content").innerHTML = "<h1>Event Started!</h1>";
+          clearInterval(countdownInterval);
+          return;
+        }
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = String(days).padStart(2, '0');
+        document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+        document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+        document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+      }
+
+      const countdownInterval = setInterval(updateCountdown, 1000);
+      updateCountdown();
+    </script>
+  </body>
+</html>

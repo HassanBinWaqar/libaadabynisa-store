@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لبادة by Nisa</title>
+    <!-- Font Awesome for icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styleSheet/unstiched.css">
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">
+        <h1>لبادة by Nisa</h1>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links" id="navLinks">
+        <ul>
+          <li><a href="..">Winter Sale</a></li>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="../Code/unstiched.html">Unstitched</a></li>
+          <li><a href="../Code/ready.html">Ready to Wear</a></li>
+          <li><a href="..">Luxury Embroideries</a></li>
+          <li><a href="..">Accessories</a></li>
+          <li><a href="../Code/index.html">Back</a></li>
+        </ul>
+      </nav>
+
+      <!-- Icons -->
+      <div class="nav-icons">
+        <div class="search-container">
+          <input type="text" placeholder="Search" />
+          <i class="fas fa-search"></i>
+        </div>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fas fa-shipping-fast"></i></a>
+        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+    </header>
+
+    <div class="filters">
+      <p>Home > Unstitched</p>
+      <div class="filter-options">
+        <select id="priceFilter">
+          <option>Price</option>
+          <option>Low to High</option>
+          <option>High to Low</option>
+        </select>
+        <select id="sizeFilter">
+          <option>Size</option>
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
+        <select id="fabricFilter">
+          <option>Fabric</option>
+          <option>Cotton</option>
+          <option>Silk</option>
+          <option>Linen</option>
+        </select>
+        <select id="pieceFilter">
+          <option>Piece</option>
+          <option>2-piece</option>
+          <option>3-piece</option>
+        </select>
+        <select id="discountFilter">
+          <option>Discount</option>
+          <option>10%</option>
+          <option>20%</option>
+        </select>
+      </div>
+    </div>
+
+    <section class="product-section">
+      <div class="product-container" id="productContainer">
+        <!-- Product Card 1 -->
+        <div
+          class="product-card"
+          data-price="120"
+          data-size="Medium"
+          data-fabric="Cotton"
+          data-piece="3-piece"
+          data-discount="20"
+        >
+          <div class="product-image-wrapper">
+            <img
+              src="../Images/dress1.jpeg"
+              alt="3 Piece - Embroidered Khaddar Suit"
+              class="product-image"
+            />
+            <div class="discount-badge">-20%</div>
+            <div class="action-icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-eye"></i>
+            </div>
+          </div>
+          <div class="product-body">
+            <button class="add-to-cart">ADD TO CART</button>
+            <p class="product-description">3 Piece - Embroidered Khaddar Suit</p>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div
+          class="product-card"
+          data-price="150"
+          data-size="Large"
+          data-fabric="Silk"
+          data-piece="2-piece"
+          data-discount="30"
+        >
+          <div class="product-image-wrapper">
+            <img
+              src="../Images/dresses.jpeg"
+              alt="2 Piece - Printed Khaddar Suit"
+              class="product-image"
+            />
+            <div class="discount-badge">-30%</div>
+            <div class="action-icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-eye"></i>
+            </div>
+          </div>
+          <div class="product-body">
+            <button class="add-to-cart">ADD TO CART</button>
+            <p class="product-description">2 Piece - Printed Khaddar Suit</p>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div
+          class="product-card"
+          data-price="50"
+          data-size="Small"
+          data-fabric="Silk"
+          data-piece="3-piece"
+          data-discount="10"
+        >
+          <div class="product-image-wrapper">
+            <img
+              src="../Images/eastern1.jpeg"
+              alt="2 Piece - Printed Khaddar Suit"
+              class="product-image"
+            />
+            <div class="discount-badge">-10%</div>
+            <div class="action-icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-eye"></i>
+            </div>
+          </div>
+          <div class="product-body">
+            <button class="add-to-cart">ADD TO CART</button>
+            <p class="product-description">2 Piece - Printed Khaddar Suit</p>
+          </div>
+        </div>
+
+        <!-- more product cards (kept structure identical) -->
+        <div
+          class="product-card"
+          data-price="500"
+          data-size="Large"
+          data-fabric="Silk"
+          data-piece="2-piece"
+          data-discount="20"
+        >
+          <div class="product-image-wrapper">
+            <img src="../Images/eastern5.jpeg" class="product-image" alt="" />
+            <div class="discount-badge">-20%</div>
+            <div class="action-icons"><i class="fas fa-heart"></i><i class="fas fa-eye"></i></div>
+          </div>
+          <div class="product-body">
+            <button class="add-to-cart">ADD TO CART</button>
+            <p class="product-description">2 Piece - Printed Khaddar Suit</p>
+          </div>
+        </div>
+
+        <div
+          class="product-card"
+          data-price="300"
+          data-size="Medium"
+          data-fabric="Silk"
+          data-piece="2-piece"
+          data-discount="20"
+        >
+          <div class="product-image-wrapper">
+            <img src="../Images/eastern4.jpeg" class="product-image" alt="" />
+            <div class="discount-badge">-20%</div>
+            <div class="action-icons"><i class="fas fa-heart"></i><i class="fas fa-eye"></i></div>
+          </div>
+          <div class="product-body">
+            <button class="add-to-cart">ADD TO CART</button>
+            <p class="product-description">2 Piece - Printed Khaddar Suit</p>
+          </div>
+        </div>
+
+        <div
+          class="product-card"
+          data-price="350"
+          data-size="Large"
+          data-fabric="Silk"
+          data-piece="2-piece"
+          data-discount="10"
+        >
+          <div class="product-image-wrapper">
+            <img src="../Images/eastern3.jpeg" class="product-image" alt="" />
+            <div class="discount-badge">-10%</div>
+            <div class="action-icons"><i class="fas fa-heart"></i><i class="fas fa-eye"></i></div>
+          </div>
+          <div class="product-body">
+            <button class="add-to-cart">ADD TO CART</button>
+            <p class="product-description">2 Piece - Printed Khaddar Suit</p>
+          </div>
+        </div>
+
+        <div
+          class="product-card"
+          data-price="800"
+          data-size="Large"
+          data-fabric="Cotton"
+          data-piece="3-piece"
+          data-discount="10"
+        >
+          <div class="product-image-wrapper">
+            <img src="../Images/eastern2.jpeg" class="product-image" alt="" />
+            <div class="discount-badge">-10%</div>
+            <div class="action-icons"><i class="fas fa-heart"></i><i class="fas fa-eye"></i></div>
+          </div>
+          <div class="product-body">
+            <button class="add-to-cart">ADD TO CART</button>
+            <p class="product-description">2 Piece - Printed Khaddar Suit</p>
+          </div>
+        </div>
+
+        <div
+          class="product-card"
+          data-price="3000"
+          data-size="Medium"
+          data-fabric="Silk"
+          data-piece="2-piece"
+          data-discount="10"
+        >
+          <div class="product-image-wrapper">
+            <img src="../Images/eastern1.jpeg" class="product-image" alt="" />
+            <div class="discount-badge">-10%</div>
+            <div class="action-icons"><i class="fas fa-heart"></i><i class="fas fa-eye"></i></div>
+          </div>
+          <div class="product-body">
+            <button class="add-to-cart">ADD TO CART</button>
+            <p class="product-description">2 Piece - Printed Kamalia Suit</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>لبادة by Nisa</h2>
+          <p>Social Media</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>SHOP</h3>
+          <ul>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Releases</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>COMPANY</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>STAY UP TO DATE</h3>
+          <div class="newsletter">
+            <input type="email" placeholder="Enter your email" />
+            <button type="submit">SUBMIT</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          <a href="#">Terms</a> | <a href="#">Privacy</a> |
+          <a href="#">Cookies</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile nav toggle (keeps your original logic but more robust)
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+
+      // Close mobile nav if viewport becomes large again
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+          navLinks.classList.remove('active');
+        }
+      });
+
+      // Search & Filters logic (kept from your original, minor defensive checks)
+      document.addEventListener("DOMContentLoaded", function () {
+        const productContainer = document.getElementById("productContainer");
+        const products = Array.from(productContainer.getElementsByClassName("product-card"));
+        const searchInput = document.querySelector('.search-container input');
+
+        if (searchInput) {
+          searchInput.addEventListener('input', function () {
+            const searchTerm = this.value.toLowerCase();
+            products.forEach((product) => {
+              const descriptionEl = product.querySelector('.product-description');
+              const description = descriptionEl ? descriptionEl.textContent.toLowerCase() : '';
+              product.style.display = description.includes(searchTerm) ? '' : 'none';
+            });
+          });
+        }
+
+        // Filter logic
+        const selects = document.querySelectorAll(".filter-options select");
+        selects.forEach((select) => select.addEventListener("change", updateFilters));
+
+        function updateFilters() {
+          const priceFilter = document.getElementById("priceFilter").value;
+          const sizeFilter = document.getElementById("sizeFilter").value;
+          const fabricFilter = document.getElementById("fabricFilter").value;
+          const pieceFilter = document.getElementById("pieceFilter").value;
+          const discountFilter = document.getElementById("discountFilter").value;
+
+          let filteredProducts = products.filter((product) => {
+            const price = parseFloat(product.getAttribute("data-price")) || 0;
+            const size = product.getAttribute("data-size") || "";
+            const fabric = product.getAttribute("data-fabric") || "";
+            const piece = product.getAttribute("data-piece") || "";
+            const discount = parseInt(product.getAttribute("data-discount")) || 0;
+
+            const matchesSize = sizeFilter === "Size" || size === sizeFilter;
+            const matchesFabric = fabricFilter === "Fabric" || fabric === fabricFilter;
+            const matchesPiece = pieceFilter === "Piece" || piece === pieceFilter;
+            const matchesDiscount = discountFilter === "Discount" || discount === parseInt(discountFilter);
+
+            return matchesSize && matchesFabric && matchesPiece && matchesDiscount;
+          });
+
+          if (priceFilter === "Low to High") {
+            filteredProducts.sort((a, b) => parseFloat(a.getAttribute("data-price")) - parseFloat(b.getAttribute("data-price")));
+          } else if (priceFilter === "High to Low") {
+            filteredProducts.sort((a, b) => parseFloat(b.getAttribute("data-price")) - parseFloat(a.getAttribute("data-price")));
+          }
+
+          productContainer.innerHTML = "";
+          filteredProducts.forEach((product) => productContainer.appendChild(product));
+        }
+
+        updateFilters();
+      });
+    </script>
+  </body>
+</html>

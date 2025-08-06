@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>لبادة by Nisa — Ready To Wear</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../styleSheet/ready.css">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="header-inner site">
+      <div class="brand" aria-label="لبادة by Nisa">
+        <h1>لبادة by Nisa</h1>
+      </div>
+
+      <!-- hamburger (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><i class="fa fa-bars"></i></button>
+
+      <!-- primary nav (desktop) -->
+      <nav class="primary" id="primaryNav" role="navigation" aria-label="Primary">
+        <a href="../Code/index.html">Home</a>
+        <a href="../Code/unstiched.html">Unstitched</a>
+        <a href="../Code/ready.html">Ready to Wear</a>
+        <a href="../Code/offers.html">Offers</a>
+        <a href="../Code/about.html">About</a>
+      </nav>
+
+      <div class="tools">
+        <div class="search" role="search" aria-label="Search products">
+          <input id="searchInput" type="search" placeholder="Search ready-to-wear…" aria-label="Search products">
+          <i class="fa fa-search" style="color:var(--muted)"></i>
+        </div>
+        <button class="icon-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button>
+        <button class="icon-btn" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- mobile nav drawer -->
+  <div id="navDrawer" class="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-drawer-close></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Main menu">
+      <button style="float:right;background:transparent;border:0;color:var(--muted);font-size:20px" data-drawer-close aria-label="Close menu">&times;</button>
+      <nav style="margin-top:24px; display:flex; flex-direction:column; gap:8px;">
+        <a href="../Code/index.html" style="padding:10px">Home</a>
+        <a href="../Code/unstiched.html" style="padding:10px">Unstitched</a>
+        <a href="../Code/ready.html" style="padding:10px">Ready to Wear</a>
+        <a href="../Code/offers.html" style="padding:10px">Offers</a>
+        <a href="../Code/about.html" style="padding:10px">About</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="site" id="page">
+    <!-- hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-left">
+        <h2 id="hero-title">Ready-to-Wear Collection</h2>
+        <p>Premium ready-made outfits for effortless style. Handpicked fabrics, tailored fits — shipped fast.</p>
+        <div>
+          <button class="cta" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Collection</button>
+        </div>
+      </div>
+      <img src="../Images/eastern2.jpeg" alt="Ready to wear hero image">
+    </section>
+
+    <div class="layout" aria-live="polite">
+      <!-- sidebar (desktop) -->
+      <aside class="filters" id="sidebarFilters" aria-label="Product filters">
+        <h3>Filters</h3>
+        <div class="group">
+          <label for="sortSelect">Sort</label>
+          <select id="sortSelect" class="sort" aria-label="Sort products">
+            <option value="popular">Most popular</option>
+            <option value="new">Newest</option>
+            <option value="price-asc">Price — Low to high</option>
+            <option value="price-desc">Price — High to low</option>
+          </select>
+        </div>
+
+        <div class="group">
+          <label>Category</label>
+          <div><label><input type="checkbox" value="dresses" class="filter-cat"> Dresses</label></div>
+          <div><label><input type="checkbox" value="tops" class="filter-cat"> Tops</label></div>
+          <div><label><input type="checkbox" value="outer" class="filter-cat"> Outerwear</label></div>
+          <div><label><input type="checkbox" value="sets" class="filter-cat"> Sets</label></div>
+        </div>
+
+        <div class="group">
+          <label for="priceRange">Price range</label>
+          <select id="priceRange">
+            <option value="any">Any</option>
+            <option value="0-50">$0 — $50</option>
+            <option value="50-100">$50 — $100</option>
+            <option value="100-200">$100 — $200</option>
+            <option value="200+">$200+</option>
+          </select>
+        </div>
+
+        <button class="apply" id="applyFilters">Apply</button>
+      </aside>
+
+      <!-- main list -->
+      <section class="main" id="products">
+        <div class="products-header">
+          <div class="title"><span class="section-title">All Ready-to-Wear</span></div>
+          <div class="controls">
+            <div style="color:var(--muted);font-size:13px">Showing <strong id="shownCount">8</strong> results</div>
+            <select id="perPage" style="background:transparent;border-radius:8px;padding:8px;border:1px solid rgba(255,255,255,0.03);color:var(--muted)">
+              <option value="8">8 / page</option>
+              <option value="12">12 / page</option>
+              <option value="24">24 / page</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid" id="grid">
+          <!-- example product card -->
+          <article class="card" data-category="dresses" data-price="89" data-title="Flowy Maxi Dress">
+            <div class="thumb"><img loading="lazy" src="../Images/dress1.jpeg" alt="Flowy Maxi Dress"></div>
+            <h4>Flowy Maxi Dress</h4>
+            <div class="meta"><div class="price">$89</div><div class="rating">4.6 ★</div></div>
+            <div class="actions">
+              <button class="btn-ghost" onclick="openQuickView(this)">Quick view</button>
+              <button class="btn-primary">Add to cart</button>
+            </div>
+          </article>
+
+          <!-- copy your other cards here (kept same structure) -->
+          <article class="card" data-category="tops" data-price="45" data-title="Elegant Blouse">
+            <div class="thumb"><img loading="lazy" src="../Images/dresses.jpeg" alt="Elegant Blouse"></div>
+            <h4>Elegant Blouse</h4>
+            <div class="meta"><div class="price">$45</div><div class="rating">4.5 ★</div></div>
+            <div class="actions"><button class="btn-ghost" onclick="openQuickView(this)">Quick view</button><button class="btn-primary">Add to cart</button></div>
+          </article>
+
+          <article class="card" data-category="outer" data-price="180" data-title="Tailored Coat">
+            <div class="thumb"><img loading="lazy" src="../Images/eastern1.jpeg" alt="Tailored Coat"></div>
+            <h4>Tailored Coat</h4>
+            <div class="meta"><div class="price">$180</div><div class="rating">4.9 ★</div></div>
+            <div class="actions"><button class="btn-ghost" onclick="openQuickView(this)">Quick view</button><button class="btn-primary">Add to cart</button></div>
+          </article>
+
+          <!-- add remaining product cards ... -->
+          <article class="card" data-category="sets" data-price="132" data-title="Two-Piece Set">
+            <div class="thumb"><img loading="lazy" src="../Images/eastern5.jpeg" alt="Two-Piece Set"></div>
+            <h4>Two-Piece Set</h4>
+            <div class="meta"><div class="price">$132</div><div class="rating">4.7 ★</div></div>
+            <div class="actions"><button class="btn-ghost" onclick="openQuickView(this)">Quick view</button><button class="btn-primary">Add to cart</button></div>
+          </article>
+
+          <article class="card" data-category="dresses" data-price="59" data-title="Casual Shirt Dress">
+            <div class="thumb"><img loading="lazy" src="../Images/eastern2.jpeg" alt="Casual Shirt Dress"></div>
+            <h4>Casual Shirt Dress</h4>
+            <div class="meta"><div class="price">$59</div><div class="rating">4.4 ★</div></div>
+            <div class="actions"><button class="btn-ghost" onclick="openQuickView(this)">Quick view</button><button class="btn-primary">Add</button></div>
+          </article>
+
+          <article class="card" data-category="tops" data-price="39" data-title="Silk Camisole">
+            <div class="thumb"><img loading="lazy" src="../Images/eastern5.jpeg" alt="Silk Camisole"></div>
+            <h4>Silk Camisole</h4>
+            <div class="meta"><div class="price">$39</div><div class="rating">4.3 ★</div></div>
+            <div class="actions"><button class="btn-ghost" onclick="openQuickView(this)">Quick view</button><button class="btn-primary">Add</button></div>
+          </article>
+
+          <article class="card" data-category="outer" data-price="120" data-title="Quilted Jacket">
+            <div class="thumb"><img loading="lazy" src="../Images/eastern3.jpeg" alt="Quilted Jacket"></div>
+            <h4>Quilted Jacket</h4>
+            <div class="meta"><div class="price">$120</div><div class="rating">4.6 ★</div></div>
+            <div class="actions"><button class="btn-ghost" onclick="openQuickView(this)">Quick view</button><button class="btn-primary">Add</button></div>
+          </article>
+
+          <article class="card" data-category="sets" data-price="220" data-title="Evening Co-ord">
+            <div class="thumb"><img loading="lazy" src="../Images/eastern6.jpeg" alt="Evening Co-ord"></div>
+            <h4>Evening Co-ord</h4>
+            <div class="meta"><div class="price">$220</div><div class="rating">4.8 ★</div></div>
+            <div class="actions"><button class="btn-ghost" onclick="openQuickView(this)">Quick view</button><button class="btn-primary">Add</button></div>
+          </article>
+        </div>
+
+        <div class="pagination" role="navigation" aria-label="Pagination">
+          <button class="page-btn" data-page="prev" disabled>&lt; Prev</button>
+          <button class="page-btn active" data-page="1">1</button>
+          <button class="page-btn" data-page="2">2</button>
+          <button class="page-btn" data-page="next">Next &gt;</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- footer -->
+  <footer>
+    <div class="site" style="display:flex;gap:20px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap">
+      <div style="min-width:180px">
+        <strong style="color:var(--accent);display:block">لبادة by Nisa</strong>
+        <small style="color:var(--muted)">Follow us for new drops and exclusive offers</small>
+      </div>
+      <div style="display:flex;gap:28px;flex-wrap:wrap">
+        <div><strong style="color:var(--accent)">Shop</strong><ul style="list-style:none;padding:10px 0 0;margin:0;color:var(--muted)"><li>Products</li><li>Collections</li></ul></div>
+        <div><strong style="color:var(--accent)">Company</strong><ul style="list-style:none;padding:10px 0 0;margin:0;color:var(--muted)"><li>About</li><li>Contact</li></ul></div>
+      </div>
+      <div style="min-width:200px">
+        <small style="color:var(--muted)">Join our newsletter</small>
+        <div style="margin-top:8px;display:flex;gap:8px">
+          <input placeholder="Your email" class="newsletter-input">
+          <button style="padding:8px 12px;border-radius:8px;background:var(--accent);border:0;color:#000;font-weight:700">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;color:var(--muted);margin-top:18px;border-top:1px solid rgba(255,255,255,0.02);padding-top:14px;">© <span id="year"></span> لبادة by Nisa — All rights reserved</div>
+  </footer>
+
+  <!-- modal -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog" role="document">
+      <div class="thumb"><img id="modalImage" src="" alt=""></div>
+      <div class="info">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc" style="color:var(--muted);margin-top:10px">Product description... replace with real content.</p>
+        <div style="margin-top:12px;display:flex;gap:10px">
+          <select id="sizeSelect" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:#0b0b0b;color:var(--muted)"><option>Size: S</option><option>Size: M</option><option>Size: L</option></select>
+          <button class="btn-primary">Add to cart</button>
+        </div>
+      </div>
+      <button class="close-btn" aria-label="Close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
+
+  <!-- filters drawer (mobile) -->
+  <div id="filterDrawer" class="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-drawer-close></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Filter products">
+      <button style="float:right;background:transparent;border:0;color:var(--muted);font-size:20px" data-drawer-close aria-label="Close filters">&times;</button>
+      <!-- copy the filters content -->
+      <div style="margin-top:36px">
+        <h3 style="color:var(--accent)">Filters</h3>
+        <div style="margin-top:12px">
+          <label style="color:var(--muted)">Category</label>
+          <div><label><input type="checkbox" value="dresses" class="filter-cat"> Dresses</label></div>
+          <div><label><input type="checkbox" value="tops" class="filter-cat"> Tops</label></div>
+          <div><label><input type="checkbox" value="outer" class="filter-cat"> Outerwear</label></div>
+          <div><label><input type="checkbox" value="sets" class="filter-cat"> Sets</label></div>
+        </div>
+        <div style="margin-top:12px">
+          <label style="color:var(--muted)">Price</label>
+          <select id="priceRangeDrawer">
+            <option value="any">Any</option><option value="0-50">$0 — $50</option><option value="50-100">$50 — $100</option>
+          </select>
+        </div>
+        <div style="margin-top:14px"><button class="apply" id="applyFiltersDrawer">Apply</button></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // mark active nav item (keeps your underline style)
+  (function markActiveNav(){
+    const navLinks = document.querySelectorAll('#primaryNav a');
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    navLinks.forEach(a=>{
+      const href = a.getAttribute('href') || '';
+      if(href.endsWith(current) || (current === '' && href.endsWith('index.html')) ) a.classList.add('active');
+    });
+  })();
+
+  // hamburger -> open nav drawer
+  const hamburger = document.getElementById('hamburger');
+  const navDrawer = document.getElementById('navDrawer');
+  if(hamburger){
+    hamburger.addEventListener('click', ()=> {
+      const open = navDrawer.classList.toggle('open');
+      navDrawer.setAttribute('aria-hidden', !open);
+      hamburger.setAttribute('aria-expanded', open);
+    });
+  }
+  // close drawer on backdrop click
+  document.querySelectorAll('[data-drawer-close]').forEach(btn => btn.addEventListener('click', ()=> {
+    [navDrawer, filterDrawer].forEach(d => { if(d) d.classList.remove('open'); d && d.setAttribute('aria-hidden', 'true'); });
+    hamburger && hamburger.setAttribute('aria-expanded', 'false');
+  }));
+
+  // filter drawer toggling (mobile)
+  const filterDrawer = document.getElementById('filterDrawer');
+  // add a small visible toggle for filters when sidebar hidden
+  const mobileFilterToggle = document.createElement('button');
+  mobileFilterToggle.className = 'filter-toggle';
+  mobileFilterToggle.innerHTML = '<i class="fa fa-filter"></i><span style="color:var(--muted);margin-left:6px">Filters</span>';
+  mobileFilterToggle.style.border = 'none';
+  mobileFilterToggle.style.background = 'transparent';
+  mobileFilterToggle.style.color = 'var(--muted)';
+  mobileFilterToggle.style.cursor = 'pointer';
+  mobileFilterToggle.setAttribute('aria-expanded','false');
+  // append into header tools for small screens
+  document.querySelector('.tools').prepend(mobileFilterToggle);
+
+  mobileFilterToggle.addEventListener('click', ()=> {
+    const open = filterDrawer.classList.toggle('open');
+    filterDrawer.setAttribute('aria-hidden', !open);
+    mobileFilterToggle.setAttribute('aria-expanded', open);
+  });
+
+  // close drawers on Escape
+  document.addEventListener('keydown', (e)=> {
+    if(e.key === 'Escape') {
+      [navDrawer, filterDrawer].forEach(d => { if(d){ d.classList.remove('open'); d.setAttribute('aria-hidden', 'true'); }});
+      hamburger && hamburger.setAttribute('aria-expanded', 'false');
+      mobileFilterToggle && mobileFilterToggle.setAttribute('aria-expanded','false');
+      if(document.getElementById('modal').classList.contains('open')) closeModal();
+    }
+  });
+
+  // quick view modal logic
+  const modal = document.getElementById('modal');
+  function openQuickView(button){
+    const card = button.closest('.card');
+    const img = card.querySelector('img').src;
+    const title = card.dataset.title || card.querySelector('h4')?.textContent || '';
+    document.getElementById('modalImage').src = img;
+    document.getElementById('modalTitle').textContent = title;
+    modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow = '';
+  }
+  modal.addEventListener('click', (e)=> { if(e.target === modal) closeModal(); });
+
+  const grid = document.getElementById('grid');
+  const initialCards = Array.from(grid.querySelectorAll('.card'));
+  const shownCountEl = document.getElementById('shownCount');
+  const searchInput = document.getElementById('searchInput');
+  const applyButton = document.getElementById('applyFilters');
+  const applyButtonDrawer = document.getElementById('applyFiltersDrawer');
+  const perPageSelect = document.getElementById('perPage');
+
+  let state = { q:'', cats:[], price:'any', sort:'popular', perPage:8, page:1 };
+
+
+  searchInput && searchInput.addEventListener('input', applyClientFilters);
+  applyButton && applyButton.addEventListener('click', applyClientFilters);
+  applyButtonDrawer && applyButtonDrawer.addEventListener('click', ()=> {
+
+    document.getElementById('priceRange').value = document.getElementById('priceRangeDrawer')?.value || 'any';
+    applyClientFilters();
+    filterDrawer.classList.remove('open');
+  });
+  document.querySelectorAll('.filter-cat').forEach(cb => cb.addEventListener('change', applyClientFilters));
+  perPageSelect && perPageSelect.addEventListener('change', applyClientFilters);
+  document.getElementById('sortSelect')?.addEventListener('change', applyClientFilters);
+
+  function applyClientFilters(){
+    state.q = (searchInput?.value || '').trim().toLowerCase();
+    state.cats = Array.from(document.querySelectorAll('.filter-cat:checked')).map(i => i.value);
+    state.price = document.getElementById('priceRange')?.value || 'any';
+    state.sort = document.getElementById('sortSelect')?.value || 'popular';
+    state.perPage = parseInt(perPageSelect?.value || 8,10) || 8;
+    state.page = 1;
+
+    let filtered = initialCards.filter(card => {
+      const title = (card.dataset.title || card.querySelector('h4')?.textContent || '').toLowerCase();
+      if(state.q && !title.includes(state.q)) return false;
+      if(state.cats.length && !state.cats.includes(card.dataset.category)) return false;
+      const price = parseFloat(card.dataset.price || '0');
+      if(state.price !== 'any'){
+        if(state.price === '0-50' && !(price <=50)) return false;
+        if(state.price === '50-100' && !(price>50 && price<=100)) return false;
+        if(state.price === '100-200' && !(price>100 && price<=200)) return false;
+        if(state.price === '200+' && !(price>200)) return false;
+      }
+      return true;
+    });
+
+    if(state.sort === 'price-asc') filtered.sort((a,b)=> parseFloat(a.dataset.price)-parseFloat(b.dataset.price));
+    if(state.sort === 'price-desc') filtered.sort((a,b)=> parseFloat(b.dataset.price)-parseFloat(a.dataset.price));
+    if(state.sort === 'new') filtered = filtered.slice().reverse();
+
+    // pagination
+    const pages = Math.max(1, Math.ceil(filtered.length / state.perPage));
+    renderPagination(pages);
+
+    const start = (state.page - 1) * state.perPage;
+    const pageItems = filtered.slice(start, start + state.perPage);
+
+    grid.innerHTML = '';
+    pageItems.forEach(c => grid.appendChild(c));
+    shownCountEl.textContent = filtered.length;
+  }
+
+  function renderPagination(totalPages){
+    const container = document.querySelector('.pagination');
+    container.innerHTML = '';
+    const prev = createPageBtn('< Prev','prev'); prev.disabled = state.page === 1; container.appendChild(prev);
+    for(let i=1;i<=totalPages;i++){ const btn = createPageBtn(i,i); if(i===state.page) btn.classList.add('active'); container.appendChild(btn); }
+    const next = createPageBtn('Next >','next'); next.disabled = state.page === totalPages; container.appendChild(next);
+  }
+
+  function createPageBtn(label, pageVal){
+    const btn = document.createElement('button'); btn.className = 'page-btn'; btn.textContent = label;
+    btn.addEventListener('click', ()=> {
+      if(pageVal==='prev'){ state.page = Math.max(1, state.page-1); }
+      else if(pageVal==='next'){ state.page = state.page+1; }
+      else state.page = Number(pageVal);
+      applyClientFilters();
+      window.scrollTo({top: document.getElementById('products').offsetTop - 20, behavior:'smooth'});
+    });
+    return btn;
+  }
+
+
+  applyClientFilters();
+
+
+  function syncSidebar(){
+    const sb = document.getElementById('sidebarFilters');
+    if(window.innerWidth > 820){ sb.style.display = 'block'; }
+    else { sb.style.display = 'none'; }
+  }
+  window.addEventListener('resize', syncSidebar);
+  syncSidebar();
+
+</script>
+</body>
+</html>
