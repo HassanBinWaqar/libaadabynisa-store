@@ -1,370 +1,452 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us - لبادة by Nisa</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - لبادة by Nisa</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
-    }
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9f9f9;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
 
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 20px;
-      background-color: #fff;
-      border-bottom: 2px solid #eee;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .logo h1 {
-      font-family: "Georgia", serif;
-      font-size: 22px;
-      color: #b79a56;
-      margin: 0;
-    }
-    .nav-links ul {
-      list-style: none;
-      display: flex;
-      gap: 14px;
-      margin: 0;
-      padding: 0;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: #333;
-      font-size: 13px;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-    .nav-links a:hover {
-      color: #b79a56;
-    }
-    .nav-icons {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .search-container {
-      display: flex;
-      align-items: center;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 6px 8px;
-      background-color: #fafafa;
-    }
-    .search-container input {
-      border: none;
-      outline: none;
-      padding: 6px;
-      background: none;
-      min-width: 90px;
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 22px;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    /* About Us Section */
-    .about-section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
-    }
-    .about-title {
-      text-align: center;
-      font-size: 26px;
-      font-weight: bold;
-      color: #b79a56;
-      margin-bottom: 20px;
-    }
-    .about-content {
-      font-size: 15px;
-      line-height: 1.7;
-      color: #555;
-      text-align: center;
-    }
-    .about-image {
-      text-align: center;
-      margin: 30px 0;
-    }
-    .about-image img {
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-    }
-    .about-mission {
-      margin-top: 30px;
-      text-align: center;
-    }
-    .about-mission h3 {
-      color: #b79a56;
-      margin-bottom: 10px;
-    }
-
-    /* Footer */
-    .footer {
-      background-color: #1c1c1c;
-      color: #fff;
-      padding: 30px 18px;
-    }
-    .footer-container {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-    .footer-brand h2 {
-      font-size: 1.6rem;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-    .social-icons a {
-      margin-right: 10px;
-      color: #fff;
-      font-size: 1.1rem;
-    }
-    .footer-section h3 {
-      margin-bottom: 12px;
-      font-size: 1.05rem;
-      color: #d4af37;
-    }
-    .footer-section ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .footer-section a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-    }
-    .newsletter input {
-      padding: 8px;
-      border-radius: 4px;
-      margin-right: 6px;
-      border: none;
-    }
-    .newsletter button {
-      padding: 8px 10px;
-      border-radius: 4px;
-      background:#9bdfb4;
-      border:none;
-      color:#123;
-      font-weight:bold;
-      cursor:pointer;
-    }
-    .footer-bottom {
-      text-align: center;
-      margin-top: 22px;
-      border-top: 1px solid #d4af37;
-      padding-top: 10px;
-    }
-    .footer-bottom a {
-      color: #d4af37;
-      text-decoration: none;
-      margin: 0 8px;
-    }
-
-    /* Responsive styles */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #fff;
-        width: 200px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      /* Navbar */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 20px;
+        background-color: #fff;
+        border-bottom: 2px solid #eee;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      .logo h1 {
+        font-family: "Georgia", serif;
+        font-size: 22px;
+        color: #b79a56;
+        margin: 0;
       }
       .nav-links ul {
-        flex-direction: column;
-        padding: 10px 0;
+        list-style: none;
+        display: flex;
+        gap: 14px;
+        margin: 0;
+        padding: 0;
       }
       .nav-links a {
-        display: block;
-        padding: 10px 20px;
+        text-decoration: none;
+        color: #333;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      .nav-links a:hover {
+        color: #b79a56;
+      }
+      .nav-icons {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .search-container {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 6px 8px;
+        background-color: #fafafa;
+      }
+      .search-container input {
+        border: none;
+        outline: none;
+        padding: 6px;
+        background: none;
+        min-width: 90px;
       }
       .menu-toggle {
-        display: block;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .about-title {
+        display: none;
         font-size: 22px;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* About Us Section */
+      .about-section {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+      }
+      .about-title {
+        text-align: center;
+        font-size: 26px;
+        font-weight: bold;
+        color: #b79a56;
+        margin-bottom: 20px;
       }
       .about-content {
+        font-size: 15px;
+        line-height: 1.7;
+        color: #555;
+        text-align: center;
+      }
+      .about-image {
+        text-align: center;
+        margin: 30px 0;
+      }
+      .about-image img {
+        max-width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+      }
+      .about-mission {
+        margin-top: 30px;
+        text-align: center;
+      }
+      .about-mission h3 {
+        color: #b79a56;
+        margin-bottom: 10px;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #1c1c1c;
+        color: #fff;
+        padding: 30px 18px;
+      }
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+      .footer-brand h2 {
+        font-size: 1.6rem;
+        color: #fff;
+        margin-bottom: 8px;
+      }
+      .social-icons a {
+        margin-right: 10px;
+        color: #fff;
+        font-size: 1.1rem;
+      }
+      .footer-section h3 {
+        margin-bottom: 12px;
+        font-size: 1.05rem;
+        color: #d4af37;
+      }
+      .footer-section ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .footer-section a {
+        color: #fff;
+        text-decoration: none;
         font-size: 14px;
       }
-    }
-    /* Extra small screen fix */
-@media (max-width: 480px) {
-  .about-section {
-    padding: 15px;
-    margin: 20px 10px;
-  }
-
-  .about-title {
-    font-size: 20px;
-    line-height: 1.3;
-  }
-
-  .about-content {
-    font-size: 13px;
-    line-height: 1.6;
-    text-align: justify;
-  }
-
-  .about-image img {
-    width: 100%;
-    height: auto;
-  }
-
-  .about-mission h3 {
-    font-size: 18px;
-  }
-
-  .about-mission p {
-    font-size: 13px;
-    text-align: justify;
-  }
-
-  /* Footer spacing on mobile */
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-section ul {
-    padding: 0;
-  }
-}
-
-  </style>
-</head>
-<body>
-
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">
-      <h1>لبادة by Nisa</h1>
-    </div>
-    <nav class="nav-links" id="navLinks">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="offers.html">Offers</a></li>
-        <li><a href="about.html" style="color:#b79a56;">About Us</a></li>
-      </ul>
-    </nav>
-    <div class="nav-icons">
-      <div class="search-container">
-        <input type="text" placeholder="Search" />
-        <i class="fas fa-search"></i>
-      </div>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
-      <a href="#"><i class="fas fa-shipping-fast"></i></a>
-      <a href="#"><i class="fas fa-shopping-cart"></i></a>
-      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
-    </div>
-  </header>
-
-  <!-- About Us Section -->
-  <section class="about-section">
-    <h2 class="about-title">About لبادة by Nisa</h2>
-    <p class="about-content">
-      At <strong>لبادة by Nisa</strong>, we believe that fashion is more than just clothing — it’s a story of elegance, culture, and confidence.
-      Since our inception, we’ve been committed to blending traditional artistry with modern designs to create timeless pieces that speak to the heart.
-    </p>
-    <div class="about-image">
-      <img src="Images/about-us.jpg" alt="Our Store">
-    </div>
-    <div class="about-mission">
-      <h3>Our Mission</h3>
-      <p>
-        Our mission is to empower women to embrace their unique style with premium-quality fabrics, intricate embroidery, and sophisticated patterns.
-        Every piece we create is designed with love, care, and the finest craftsmanship.
-      </p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <h2>لبادة by Nisa</h2>
-        <p>Social Media</p>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-      <div class="footer-section">
-        <h3>SHOP</h3>
-        <ul>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Overview</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">Releases</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>COMPANY</h3>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="support.html">Support</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>STAY UP TO DATE</h3>
-        <div class="newsletter">
-          <input type="email" placeholder="Enter your email" />
-          <button type="submit">SUBMIT</button>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>
-        <a href="#">Terms</a> | <a href="#">Privacy</a> | <a href="#">Cookies</a>
-      </p>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile nav toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    menuToggle.addEventListener('click', () => {
-      navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
-    });
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        navLinks.style.display = 'flex';
-      } else {
-        navLinks.style.display = 'none';
+      .newsletter input {
+        padding: 8px;
+        border-radius: 4px;
+        margin-right: 6px;
+        border: none;
       }
-    });
-  </script>
-</body>
+      .newsletter button {
+        padding: 8px 10px;
+        border-radius: 4px;
+        background: #9bdfb4;
+        border: none;
+        color: #123;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .footer-bottom {
+        text-align: center;
+        margin-top: 22px;
+        border-top: 1px solid #d4af37;
+        padding-top: 10px;
+      }
+      .footer-bottom a {
+        color: #d4af37;
+        text-decoration: none;
+        margin: 0 8px;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          background: #fff;
+          width: 200px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .nav-links ul {
+          flex-direction: column;
+          padding: 10px 0;
+        }
+        .nav-links a {
+          display: block;
+          padding: 10px 20px;
+        }
+        .menu-toggle {
+          display: block;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .about-title {
+          font-size: 22px;
+        }
+        .about-content {
+          font-size: 14px;
+        }
+      }
+      /* Extra small screen fix */
+      @media (max-width: 480px) {
+        .about-section {
+          padding: 15px;
+          margin: 20px 10px;
+        }
+
+        .about-title {
+          font-size: 20px;
+          line-height: 1.3;
+        }
+
+        .about-content {
+          font-size: 13px;
+          line-height: 1.6;
+          text-align: justify;
+        }
+
+        .about-image img {
+          width: 100%;
+          height: auto;
+        }
+
+        .about-mission h3 {
+          font-size: 18px;
+        }
+
+        .about-mission p {
+          font-size: 13px;
+          text-align: justify;
+        }
+
+        /* Footer spacing on mobile */
+        .footer-container {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .footer-section ul {
+          padding: 0;
+        }
+      }
+      /* Mobile Navigation */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          background: #fff;
+          width: 100%;
+          padding: 15px 0;
+          border-top: 1px solid #eee;
+          text-align: center;
+        }
+
+        .nav-links.active {
+          display: block;
+        }
+
+        .nav-links ul {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .nav-icons {
+          gap: 8px;
+        }
+      }
+
+      /* Extra Small Devices */
+      @media (max-width: 480px) {
+        .about-section {
+          margin: 20px 10px;
+          padding: 15px;
+        }
+
+        .about-title {
+          font-size: 20px;
+        }
+
+        .about-content,
+        .about-mission p {
+          font-size: 14px;
+          text-align: justify;
+        }
+
+        .about-image img {
+          width: 100%;
+          height: auto;
+        }
+
+        .footer-container {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .footer-section ul {
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">
+        <h1>لبادة by Nisa</h1>
+      </div>
+      <nav class="nav-links" id="navLinks">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="offers.html">Offers</a></li>
+          <li><a href="about.html" style="color: #b79a56">About Us</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <div class="search-container">
+          <input type="text" placeholder="Search" />
+          <i class="fas fa-search"></i>
+        </div>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fas fa-shipping-fast"></i></a>
+        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section class="about-section">
+      <h2 class="about-title">About لبادة by Nisa</h2>
+      <p class="about-content">
+        At <strong>لبادة by Nisa</strong>, we believe that fashion is more than
+        just clothing — it’s a story of elegance, culture, and confidence. Since
+        our inception, we’ve been committed to blending traditional artistry
+        with modern designs to create timeless pieces that speak to the heart.
+      </p>
+      <div class="about-image">
+        <img src="Images/about-us.jpg" alt="Our Store" />
+      </div>
+      <div class="about-mission">
+        <h3>Our Mission</h3>
+        <p>
+          Our mission is to empower women to embrace their unique style with
+          premium-quality fabrics, intricate embroidery, and sophisticated
+          patterns. Every piece we create is designed with love, care, and the
+          finest craftsmanship.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>لبادة by Nisa</h2>
+          <p>Social Media</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>SHOP</h3>
+          <ul>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Releases</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>COMPANY</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>STAY UP TO DATE</h3>
+          <div class="newsletter">
+            <input type="email" placeholder="Enter your email" />
+            <button type="submit">SUBMIT</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          <a href="#">Terms</a> | <a href="#">Privacy</a> |
+          <a href="#">Cookies</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile nav toggle
+      // const menuToggle = document.getElementById('menuToggle');
+      // const navLinks = document.getElementById('navLinks');
+      menuToggle.addEventListener("click", () => {
+        navLinks.style.display =
+          navLinks.style.display === "block" ? "none" : "block";
+      });
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          navLinks.style.display = "flex";
+        } else {
+          navLinks.style.display = "none";
+        }
+      });
+
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
 </html>
