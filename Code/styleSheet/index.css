@@ -276,6 +276,66 @@
       .newsletter button { background-color: #9bdfb4; border: none; padding: 10px 15px; color: #1f3b2c; font-weight: bold; border-radius: 3px; cursor: pointer; }
       .footer-bottom { text-align: center; margin-top: 30px; border-top: 1px solid #d4af37; padding-top: 10px; }
       .footer-bottom a { color: #d4af37; text-decoration: none; margin: 0 10px; }
+/* mobile: full-screen glass menu when active */
+#nav-list {
+  /* keep default desktop layout */
+  transition: all 260ms ease;
+}
+
+/* Active/visible mobile menu */
+#nav-list.active {
+  position: fixed;        /* full screen overlay */
+  inset: 70px 12px 20px; /* leave room for header/hamburger (adjust if header height differs) */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 16px;
+  z-index: 1200;          /* above background video */
+  background: linear-gradient(180deg, rgba(12, 18, 35, 0.72), rgba(6, 8, 12, 0.56));
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  box-shadow: 0 10px 40px rgba(2, 6, 20, 0.6);
+  border: 1px solid rgba(255,255,255,0.04);
+  overflow-y: auto;
+}
+
+/* Make nav links big & readable on mobile */
+#nav-list.active li {
+  list-style: none;
+  margin: 0;
+}
+#nav-list.active a {
+  color: #fff;                /* high contrast */
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 12px 14px;
+  border-radius: 10px;
+  transition: background .18s ease, color .18s ease;
+}
+#nav-list.active a:hover,
+#nav-list.active a:focus {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  outline: none;
+}
+
+/* ensure hamburger stays above overlay (if needed) */
+.hamburger {
+  position: relative;
+  z-index: 1300;
+}
+
+/* small screens only */
+@media (max-width: 768px) {
+  /* hide horizontal nav in header if using overlay */
+  #nav-list { display: none; }          /* default hidden on mobile */
+  #nav-list.active { display: flex; }   /* show when active */
+
+  /* optionally make header compact */
+  header nav { align-items: center; }
+}
 
       /* --- Responsive breakpoints --- */
 

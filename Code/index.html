@@ -307,6 +307,23 @@
 
       const countdownInterval = setInterval(updateCountdown, 1000);
       updateCountdown();
+      // Optional: add a small "Close" button to the mobile menu for better UX
+(function addCloseBtnToMobileMenu(){
+  const navList = document.getElementById('nav-list');
+  if (!navList) return;
+
+  // create close button once
+  if (!document.getElementById('mobile-close-btn')) {
+    const btn = document.createElement('button');
+    btn.id = 'mobile-close-btn';
+    btn.type = 'button';
+    btn.innerText = 'Close ✕';
+    btn.style.cssText = 'align-self:flex-end;margin-bottom:8px;background:transparent;color:#fff;border:none;font-weight:700;padding:4px 8px;cursor:pointer';
+    btn.addEventListener('click', () => navList.classList.remove('active'));
+    navList.prepend(btn);
+  }
+})();
+
     </script>
   </body>
 </html>
